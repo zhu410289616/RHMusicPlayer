@@ -10,7 +10,7 @@
 
 @interface RHMusicPlaybackConfiguration : NSObject
 
-@property (nonatomic, copy) NSArray *queuedMediaItems;
+@property (nonatomic, copy) NSArray *queuedMusicItems;
 
 + (RHMusicPlaybackConfiguration *)defaultConfiguration;
 

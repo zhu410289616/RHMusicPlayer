@@ -19,7 +19,7 @@ NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybac
 {
     if (self = [super init]) {
         _currentQueue = [[RHMusicPlaybackQueue alloc] init];
-        [_currentQueue enqueueMusicItems:configuration.queuedMediaItems];
+        [_currentQueue enqueueMusicItems:configuration.queuedMusicItems];
     }
     return self;
 }

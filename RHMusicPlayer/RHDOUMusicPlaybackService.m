@@ -94,8 +94,7 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 
 - (void)stop
 {
-    [self.player stop];
-    self.player = nil;
+    [self cancelPlay];
     
     self.nowPlaying = nil;
     self.remoteControl = nil;
@@ -130,7 +129,6 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 
 - (void)skipToBeginning
 {
-    [self.player pause];
     [self.player setCurrentTime:0];
     [self.player play];
 }
@@ -151,6 +149,8 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 
 - (void)prepareToPlay
 {
+    [self cancelPlay];
+    
     self.player = [DOUAudioStreamer streamerWithAudioFile:self.currentMusicItem];
     [self.player addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusKVOKey];
     [self.player addObserver:self forKeyPath:@"duration" options:NSKeyValueObservingOptionNew context:kDurationKVOKey];
@@ -160,6 +160,17 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     
     //just for DOUAudioStreamer
     [self setupHintForStreamer];
+}
+
+- (void)cancelPlay
+{
+    if (self.player) {
+        [self.player stop];
+        [self.player removeObserver:self forKeyPath:@"status"];
+        [self.player removeObserver:self forKeyPath:@"duration"];
+        [self.player removeObserver:self forKeyPath:@"bufferingRatio"];
+        self.player = nil;
+    }
 }
 
 - (void)setupHintForStreamer
@@ -212,6 +223,7 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
             
         case DOUAudioStreamerFinished:
             NSLog(@"DOUAudioStreamerFinished");
+            [self next];
             break;
             
         case DOUAudioStreamerBuffering:

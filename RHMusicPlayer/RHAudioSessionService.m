@@ -121,7 +121,7 @@
 
 - (void)reset
 {
-    if (YES == [self.player isPlaying])
+    if ([self.player isPlaying])
     {
         [self.player stop];
     }
