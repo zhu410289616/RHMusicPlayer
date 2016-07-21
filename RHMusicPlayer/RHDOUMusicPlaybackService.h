@@ -8,6 +8,10 @@
 
 #import "RHMusicPlaybackService.h"
 
+@class RHMusicPlaybackConfiguration;
+
 @interface RHDOUMusicPlaybackService : RHMusicPlaybackService
+
+- (id)initWithConfiguration:(RHMusicPlaybackConfiguration *)configuration;
 
 @end

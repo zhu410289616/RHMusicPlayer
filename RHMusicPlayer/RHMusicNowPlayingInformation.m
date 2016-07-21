@@ -10,6 +10,7 @@
 #import "RHMusicPlaybackQueue.h"
 #import "RHMusicPlaybackQueueManager.h"
 #import <MediaPlayer/MediaPlayer.h>
+#import "RHMusicItem.h"
 
 @interface RHMusicNowPlayingInformation ()
 
@@ -38,21 +39,20 @@
 
 - (void)nowPlayingItemChanged:(NSNotification *)notification
 {
-    MPMediaItem *currentMediaItem = notification.userInfo[RHMusicPlaybackQueueNowPlayingItemChangedKey];
-    [self updateNowPlayingInfoCenter:currentMediaItem];
+    RHMusicItem *currentMusicItem = notification.userInfo[RHMusicPlaybackQueueNowPlayingItemChangedKey];
+    [self updateNowPlayingInfoCenter:currentMusicItem];
 }
 
 #pragma mark - Private behavior
 
-- (void)updateNowPlayingInfoCenter:(MPMediaItem *)nowPlayingMediaItem
+- (void)updateNowPlayingInfoCenter:(RHMusicItem *)nowPlayingMusicItem
 {
     NSMutableDictionary *nowPlayingInfo = [NSMutableDictionary dictionary];
     
-//    NSDictionary *currentItemInfo = [nowPlayingMediaItem sab_nowPlayingInfo];
-//    if (currentItemInfo.count > 0)
-//    {
-//        [nowPlayingInfo addEntriesFromDictionary:currentItemInfo];
-//    }
+    NSDictionary *currentItemInfo = [nowPlayingMusicItem rh_nowPlayingInfo];
+    if (currentItemInfo.count > 0) {
+        [nowPlayingInfo addEntriesFromDictionary:currentItemInfo];
+    }
     
     nowPlayingInfo[MPNowPlayingInfoPropertyPlaybackRate] = @(1.0f);
     nowPlayingInfo[MPNowPlayingInfoPropertyDefaultPlaybackRate] = @(1.0f);

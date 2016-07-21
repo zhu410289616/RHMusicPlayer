@@ -8,16 +8,18 @@
 
 #import "RHMusicPlaybackQueueManager.h"
 #import "RHMusicPlaybackQueue.h"
+#import "RHMusicPlaybackConfiguration.h"
 
 NSString * const RHMusicPlaybackQueueNowPlayingItemChanged = @"RHMusicPlaybackQueueNowPlayingItemChanged";
 NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybackQueueNowPlayingItemChangedKey";
 
 @implementation RHMusicPlaybackQueueManager
 
-- (instancetype)init
+- (instancetype)initWithConfiguration:(RHMusicPlaybackConfiguration *)configuration
 {
     if (self = [super init]) {
         _currentQueue = [[RHMusicPlaybackQueue alloc] init];
+        [_currentQueue enqueueMusicItems:configuration.queuedMediaItems];
     }
     return self;
 }
@@ -33,12 +35,12 @@ NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybac
 
 - (void)broadcastNowPlayingItemChange
 {
-    id musicItem = [self nowPlayingItem];
+    RHMusicItem *musicItem = [self nowPlayingItem];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:RHMusicPlaybackQueueNowPlayingItemChanged object:self userInfo:@{ RHMusicPlaybackQueueNowPlayingItemChangedKey:musicItem }];
 }
 
-- (id)nowPlayingItem
+- (RHMusicItem *)nowPlayingItem
 {
     NSInteger nowPlayingIndex = _currentQueue.indexOfCurrentMusicItem;
     return [_currentQueue musicItemAtIndex:nowPlayingIndex];

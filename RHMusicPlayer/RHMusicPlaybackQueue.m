@@ -7,6 +7,7 @@
 //
 
 #import "RHMusicPlaybackQueue.h"
+#import "RHMusicItem.h"
 
 NSInteger const RHMusicPlaybackQueueIndexStopped = -1;
 
@@ -35,25 +36,31 @@ NSInteger const RHMusicPlaybackQueueIndexStopped = -1;
     }
     
     NSMutableArray *updatedMusicItems = [NSMutableArray arrayWithArray:_queuedMusicItems];
-    [pendingMusicItems enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        //TODO: check music items
-        
-        [updatedMusicItems addObject:obj];
-    }];
+    [updatedMusicItems addObjectsFromArray:pendingMusicItems];
     
     if (_shufflePlayback) {
-        //TODO: shuffle
+        [updatedMusicItems rh_shuffle];
     }
     
     _queuedMusicItems = updatedMusicItems;
 }
 
-- (id)musicItemAtIndex:(NSInteger)index
+- (RHMusicItem *)musicItemAtIndex:(NSInteger)index
 {
     if ((index > RHMusicPlaybackQueueIndexStopped) && (index < _queuedMusicItems.count)) {
         return _queuedMusicItems[index];
     }
     return nil;
+}
+
+- (RHMusicItem *)nextMusicItem
+{
+    return [self assetForIndex:[self nextItemIndex]];
+}
+
+- (RHMusicItem *)previousMusicItem
+{
+    return [self assetForIndex:[self previousItemIndex]];
 }
 
 - (NSInteger)nextItemIndex
@@ -82,6 +89,37 @@ NSInteger const RHMusicPlaybackQueueIndexStopped = -1;
     }
     
     return RHMusicPlaybackQueueIndexStopped;
+}
+
+- (RHMusicItem *)assetForIndex:(NSInteger)index
+{
+    if (RHMusicPlaybackQueueIndexStopped == index) {
+        return nil;
+    }
+    
+    RHMusicItem *musicItem = [self musicItemAtIndex:index];
+    if (musicItem) {
+        _indexOfCurrentMusicItem = index;
+    }
+    
+    return musicItem;
+}
+
+@end
+
+@implementation NSMutableArray (shuffle)
+
+/**
+ *  http://en.wikipedia.org/wiki/Fisher–Yates_shuffle
+ *  http://nshipster.com/random/
+ */
+- (void)rh_shuffle
+{
+    if (self.count > 1) {
+        for (NSInteger i=(self.count-1); i>0; --i) {
+            [self exchangeObjectAtIndex:i withObjectAtIndex:arc4random_uniform((int32_t)(i + 1))];
+        }
+    }
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+@class RHMusicItem;
+
 extern NSInteger const RHMusicPlaybackQueueIndexStopped;
 
 @interface RHMusicPlaybackQueue : NSObject
@@ -21,6 +23,19 @@ extern NSInteger const RHMusicPlaybackQueueIndexStopped;
 @property (nonatomic, readonly) NSInteger numberOfMusicItems;
 
 - (void)enqueueMusicItems:(NSArray *)pendingMusicItems;
-- (id)musicItemAtIndex:(NSInteger)index;
+
+- (RHMusicItem *)musicItemAtIndex:(NSInteger)index;
+
+- (RHMusicItem *)nextMusicItem;
+- (RHMusicItem *)previousMusicItem;
+
+- (NSInteger)nextItemIndex;
+- (NSInteger)previousItemIndex;
+
+@end
+
+@interface NSMutableArray (shuffle)
+
+- (void)rh_shuffle;
 
 @end

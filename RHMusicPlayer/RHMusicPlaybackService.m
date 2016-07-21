@@ -8,6 +8,8 @@
 
 #import "RHMusicPlaybackService.h"
 
+NSTimeInterval const SystemMusicPlaybackServiceStartThreshold = 4.0f;
+
 @implementation RHMusicPlaybackService
 
 #pragma mark - RHMusicPlayback

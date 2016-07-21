@@ -20,9 +20,15 @@
 		83C6FC271D408B4B00530C86 /* RHMusicNowPlayingInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC261D408B4B00530C86 /* RHMusicNowPlayingInformation.m */; };
 		83C6FC2A1D408E1200530C86 /* RHAudioSessionCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC291D408E1200530C86 /* RHAudioSessionCoordinator.m */; };
 		83C6FC2D1D40947900530C86 /* RHDOUMusicPlaybackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC2C1D40947900530C86 /* RHDOUMusicPlaybackService.m */; };
+		83C6FC301D40A88C00530C86 /* RHMusicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC2F1D40A88C00530C86 /* RHMusicItem.m */; };
+		83C6FC331D40A90700530C86 /* RHMusicItem+DOUAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC321D40A90700530C86 /* RHMusicItem+DOUAudioFile.m */; };
+		83C6FC361D40A9B200530C86 /* RHAudioSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC351D40A9B200530C86 /* RHAudioSessionService.m */; };
+		83C6FC391D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */; };
+		8B70FCEE62BBA1563C6931C9 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A648D4DE2C3B5190FC85A91 /* libPods-Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A648D4DE2C3B5190FC85A91 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C6FBFD1D4072A500530C86 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C6FC011D4072A500530C86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83C6FC031D4072A500530C86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -48,6 +54,16 @@
 		83C6FC291D408E1200530C86 /* RHAudioSessionCoordinator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAudioSessionCoordinator.m; sourceTree = "<group>"; };
 		83C6FC2B1D40947900530C86 /* RHDOUMusicPlaybackService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHDOUMusicPlaybackService.h; sourceTree = "<group>"; };
 		83C6FC2C1D40947900530C86 /* RHDOUMusicPlaybackService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHDOUMusicPlaybackService.m; sourceTree = "<group>"; };
+		83C6FC2E1D40A88C00530C86 /* RHMusicItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHMusicItem.h; sourceTree = "<group>"; };
+		83C6FC2F1D40A88C00530C86 /* RHMusicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHMusicItem.m; sourceTree = "<group>"; };
+		83C6FC311D40A90700530C86 /* RHMusicItem+DOUAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RHMusicItem+DOUAudioFile.h"; sourceTree = "<group>"; };
+		83C6FC321D40A90700530C86 /* RHMusicItem+DOUAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RHMusicItem+DOUAudioFile.m"; sourceTree = "<group>"; };
+		83C6FC341D40A9B200530C86 /* RHAudioSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAudioSessionService.h; sourceTree = "<group>"; };
+		83C6FC351D40A9B200530C86 /* RHAudioSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAudioSessionService.m; sourceTree = "<group>"; };
+		83C6FC371D40C8CE00530C86 /* RHMusicPlaybackConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHMusicPlaybackConfiguration.h; sourceTree = "<group>"; };
+		83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHMusicPlaybackConfiguration.m; sourceTree = "<group>"; };
+		CA1531B805373D9529FE6B8F /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		E5F12D579D0425921C7C785F /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,18 +71,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B70FCEE62BBA1563C6931C9 /* libPods-Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6614E1D7932E24820B3683C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5F12D579D0425921C7C785F /* Pods-Example.debug.xcconfig */,
+				CA1531B805373D9529FE6B8F /* Pods-Example.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		83C6FBF41D4072A500530C86 = {
 			isa = PBXGroup;
 			children = (
 				83C6FC171D40730200530C86 /* RHMusicPlayer */,
 				83C6FBFF1D4072A500530C86 /* Example */,
 				83C6FBFE1D4072A500530C86 /* Products */,
+				6614E1D7932E24820B3683C7 /* Pods */,
+				B8B0E0393AA0193DD21AAA0D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,9 +148,25 @@
 				83C6FC291D408E1200530C86 /* RHAudioSessionCoordinator.m */,
 				83C6FC2B1D40947900530C86 /* RHDOUMusicPlaybackService.h */,
 				83C6FC2C1D40947900530C86 /* RHDOUMusicPlaybackService.m */,
+				83C6FC2E1D40A88C00530C86 /* RHMusicItem.h */,
+				83C6FC2F1D40A88C00530C86 /* RHMusicItem.m */,
+				83C6FC311D40A90700530C86 /* RHMusicItem+DOUAudioFile.h */,
+				83C6FC321D40A90700530C86 /* RHMusicItem+DOUAudioFile.m */,
+				83C6FC341D40A9B200530C86 /* RHAudioSessionService.h */,
+				83C6FC351D40A9B200530C86 /* RHAudioSessionService.m */,
+				83C6FC371D40C8CE00530C86 /* RHMusicPlaybackConfiguration.h */,
+				83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */,
 			);
 			name = RHMusicPlayer;
 			path = ../RHMusicPlayer;
+			sourceTree = "<group>";
+		};
+		B8B0E0393AA0193DD21AAA0D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A648D4DE2C3B5190FC85A91 /* libPods-Example.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 83C6FC141D4072A500530C86 /* Build configuration list for PBXNativeTarget "Example" */;
 			buildPhases = (
+				DE71B0687C8B510816940A82 /* 📦 Check Pods Manifest.lock */,
 				83C6FBF91D4072A500530C86 /* Sources */,
 				83C6FBFA1D4072A500530C86 /* Frameworks */,
 				83C6FBFB1D4072A500530C86 /* Resources */,
+				F816FDF1B252EFB09D041C38 /* 📦 Embed Pods Frameworks */,
+				AF29890A8A1C2439136E99E7 /* 📦 Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -190,21 +237,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AF29890A8A1C2439136E99E7 /* 📦 Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Example/Pods-Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE71B0687C8B510816940A82 /* 📦 Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F816FDF1B252EFB09D041C38 /* 📦 Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "📦 Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-Example/Pods-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		83C6FBF91D4072A500530C86 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83C6FC331D40A90700530C86 /* RHMusicItem+DOUAudioFile.m in Sources */,
+				83C6FC361D40A9B200530C86 /* RHAudioSessionService.m in Sources */,
 				83C6FC2A1D408E1200530C86 /* RHAudioSessionCoordinator.m in Sources */,
 				83C6FC081D4072A500530C86 /* ViewController.m in Sources */,
 				83C6FC051D4072A500530C86 /* AppDelegate.m in Sources */,
 				83C6FC271D408B4B00530C86 /* RHMusicNowPlayingInformation.m in Sources */,
 				83C6FC1B1D4073B400530C86 /* RHMusicPlaybackService.m in Sources */,
 				83C6FC2D1D40947900530C86 /* RHDOUMusicPlaybackService.m in Sources */,
+				83C6FC301D40A88C00530C86 /* RHMusicItem.m in Sources */,
 				83C6FC241D407A0600530C86 /* RHMusicPlaybackQueueManager.m in Sources */,
 				83C6FC1E1D40760500530C86 /* RHMusicRemoteCommander.m in Sources */,
 				83C6FC211D4079A700530C86 /* RHMusicPlaybackQueue.m in Sources */,
 				83C6FC021D4072A500530C86 /* main.m in Sources */,
+				83C6FC391D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +413,7 @@
 		};
 		83C6FC151D4072A500530C86 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5F12D579D0425921C7C785F /* Pods-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -325,6 +425,7 @@
 		};
 		83C6FC161D4072A500530C86 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA1531B805373D9529FE6B8F /* Pods-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
@@ -353,6 +454,7 @@
 				83C6FC161D4072A500530C86 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
