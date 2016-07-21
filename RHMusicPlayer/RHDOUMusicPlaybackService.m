@@ -199,6 +199,7 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     switch ([self.player status]) {
         case DOUAudioStreamerPlaying:
             NSLog(@"DOUAudioStreamerPlaying");
+            [self.queueManager broadcastNowPlayingItemChange];
             break;
             
         case DOUAudioStreamerPaused:

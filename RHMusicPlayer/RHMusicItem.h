@@ -12,6 +12,9 @@
 
 @property (nonatomic, strong) NSString *artist;
 @property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *albumTitle;
+@property (nonatomic, strong) NSString *avatar;
+@property (nonatomic, strong) NSString *picture;
 @property (nonatomic, strong) NSString *musicPath;
 
 @end
