@@ -10,8 +10,6 @@
 #import "RHMusicPlaybackQueue.h"
 #import "RHMusicNowPlayingInformation.h"
 #import "RHMusicRemoteCommander.h"
-#import "DOUAudioStreamer.h"
-#import "RHMusicItem+DOUAudioFile.h"
 
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
@@ -52,6 +50,16 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
         [self commonInitForDOUMusicPlaybackService];
     }
     return self;
+}
+
+- (DOUAudioStreamer *)player
+{
+    return _player;
+}
+
+- (RHMusicItem *)currentMusicItem
+{
+    return _currentMusicItem;
 }
 
 #pragma mark - Public behavior
@@ -163,9 +171,6 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     [self.player addObserver:self forKeyPath:@"bufferingRatio" options:NSKeyValueObservingOptionNew context:kBufferingRatioKVOKey];
     
     [self.player play];
-    
-    //just for DOUAudioStreamer
-    [self setupHintForStreamer];
 }
 
 - (void)cancelPlay
