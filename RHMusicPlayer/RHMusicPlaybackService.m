@@ -7,10 +7,26 @@
 //
 
 #import "RHMusicPlaybackService.h"
+#import "RHAudioSessionMonitor.h"
 
 NSTimeInterval const SystemMusicPlaybackServiceStartThreshold = 4.0f;
 
+@interface RHMusicPlaybackService ()
+
+@property (nonatomic, strong) RHAudioSessionMonitor *audioSessionMonitor;
+
+@end
+
 @implementation RHMusicPlaybackService
+
+- (instancetype)init
+{
+    if (self = [super init]) {
+        _audioSessionMonitor = [[RHAudioSessionMonitor alloc] initWithService:self];
+        _queueManager = [[RHMusicPlaybackQueueManager alloc] init];
+    }
+    return self;
+}
 
 #pragma mark - RHMusicPlayback
 
@@ -22,7 +38,7 @@ NSTimeInterval const SystemMusicPlaybackServiceStartThreshold = 4.0f;
 
 - (BOOL)isPlaying
 {
-    return YES;
+    return NO;
 }
 
 - (void)togglePlayPause

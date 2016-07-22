@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8313BE011D41E200002D7A4F /* RHAudioSessionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8313BE001D41E200002D7A4F /* RHAudioSessionMonitor.m */; };
 		83C6FC021D4072A500530C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC011D4072A500530C86 /* main.m */; };
 		83C6FC051D4072A500530C86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC041D4072A500530C86 /* AppDelegate.m */; };
 		83C6FC081D4072A500530C86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC071D4072A500530C86 /* ViewController.m */; };
@@ -22,13 +23,14 @@
 		83C6FC2D1D40947900530C86 /* RHDOUMusicPlaybackService.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC2C1D40947900530C86 /* RHDOUMusicPlaybackService.m */; };
 		83C6FC301D40A88C00530C86 /* RHMusicItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC2F1D40A88C00530C86 /* RHMusicItem.m */; };
 		83C6FC331D40A90700530C86 /* RHMusicItem+DOUAudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC321D40A90700530C86 /* RHMusicItem+DOUAudioFile.m */; };
-		83C6FC361D40A9B200530C86 /* RHAudioSessionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC351D40A9B200530C86 /* RHAudioSessionService.m */; };
 		83C6FC391D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */; };
 		8B70FCEE62BBA1563C6931C9 /* libPods-Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A648D4DE2C3B5190FC85A91 /* libPods-Example.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2A648D4DE2C3B5190FC85A91 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8313BDFF1D41E200002D7A4F /* RHAudioSessionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAudioSessionMonitor.h; sourceTree = "<group>"; };
+		8313BE001D41E200002D7A4F /* RHAudioSessionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAudioSessionMonitor.m; sourceTree = "<group>"; };
 		83C6FBFD1D4072A500530C86 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C6FC011D4072A500530C86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83C6FC031D4072A500530C86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,8 +60,6 @@
 		83C6FC2F1D40A88C00530C86 /* RHMusicItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHMusicItem.m; sourceTree = "<group>"; };
 		83C6FC311D40A90700530C86 /* RHMusicItem+DOUAudioFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RHMusicItem+DOUAudioFile.h"; sourceTree = "<group>"; };
 		83C6FC321D40A90700530C86 /* RHMusicItem+DOUAudioFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RHMusicItem+DOUAudioFile.m"; sourceTree = "<group>"; };
-		83C6FC341D40A9B200530C86 /* RHAudioSessionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAudioSessionService.h; sourceTree = "<group>"; };
-		83C6FC351D40A9B200530C86 /* RHAudioSessionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAudioSessionService.m; sourceTree = "<group>"; };
 		83C6FC371D40C8CE00530C86 /* RHMusicPlaybackConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHMusicPlaybackConfiguration.h; sourceTree = "<group>"; };
 		83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHMusicPlaybackConfiguration.m; sourceTree = "<group>"; };
 		CA1531B805373D9529FE6B8F /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -152,10 +152,10 @@
 				83C6FC2F1D40A88C00530C86 /* RHMusicItem.m */,
 				83C6FC311D40A90700530C86 /* RHMusicItem+DOUAudioFile.h */,
 				83C6FC321D40A90700530C86 /* RHMusicItem+DOUAudioFile.m */,
-				83C6FC341D40A9B200530C86 /* RHAudioSessionService.h */,
-				83C6FC351D40A9B200530C86 /* RHAudioSessionService.m */,
 				83C6FC371D40C8CE00530C86 /* RHMusicPlaybackConfiguration.h */,
 				83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */,
+				8313BDFF1D41E200002D7A4F /* RHAudioSessionMonitor.h */,
+				8313BE001D41E200002D7A4F /* RHAudioSessionMonitor.m */,
 			);
 			name = RHMusicPlayer;
 			path = ../RHMusicPlayer;
@@ -296,7 +296,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				83C6FC331D40A90700530C86 /* RHMusicItem+DOUAudioFile.m in Sources */,
-				83C6FC361D40A9B200530C86 /* RHAudioSessionService.m in Sources */,
 				83C6FC2A1D408E1200530C86 /* RHAudioSessionCoordinator.m in Sources */,
 				83C6FC081D4072A500530C86 /* ViewController.m in Sources */,
 				83C6FC051D4072A500530C86 /* AppDelegate.m in Sources */,
@@ -307,6 +306,7 @@
 				83C6FC241D407A0600530C86 /* RHMusicPlaybackQueueManager.m in Sources */,
 				83C6FC1E1D40760500530C86 /* RHMusicRemoteCommander.m in Sources */,
 				83C6FC211D4079A700530C86 /* RHMusicPlaybackQueue.m in Sources */,
+				8313BE011D41E200002D7A4F /* RHAudioSessionMonitor.m in Sources */,
 				83C6FC021D4072A500530C86 /* main.m in Sources */,
 				83C6FC391D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m in Sources */,
 			);

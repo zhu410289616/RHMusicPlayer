@@ -7,8 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "RHMusicPlaybackQueue.h"
 
-@class RHMusicPlaybackQueue;
 @class RHMusicPlaybackConfiguration;
 
 extern NSString * const RHMusicPlaybackQueueNowPlayingItemChanged;
@@ -17,8 +17,6 @@ extern NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey;
 @interface RHMusicPlaybackQueueManager : NSObject
 
 @property (nonatomic, strong, readonly) RHMusicPlaybackQueue *currentQueue;
-
-- (instancetype)initWithConfiguration:(RHMusicPlaybackConfiguration *)configuration;
 
 - (void)enqueueMusicItems:(NSArray *)musicItems;
 

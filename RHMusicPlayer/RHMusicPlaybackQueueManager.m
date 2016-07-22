@@ -7,19 +7,16 @@
 //
 
 #import "RHMusicPlaybackQueueManager.h"
-#import "RHMusicPlaybackQueue.h"
-#import "RHMusicPlaybackConfiguration.h"
 
 NSString * const RHMusicPlaybackQueueNowPlayingItemChanged = @"RHMusicPlaybackQueueNowPlayingItemChanged";
 NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybackQueueNowPlayingItemChangedKey";
 
 @implementation RHMusicPlaybackQueueManager
 
-- (instancetype)initWithConfiguration:(RHMusicPlaybackConfiguration *)configuration
+- (instancetype)init
 {
     if (self = [super init]) {
         _currentQueue = [[RHMusicPlaybackQueue alloc] init];
-        [_currentQueue enqueueMusicItems:configuration.queuedMusicItems];
     }
     return self;
 }

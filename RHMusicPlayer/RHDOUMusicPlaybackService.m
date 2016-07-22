@@ -8,7 +8,6 @@
 
 #import "RHDOUMusicPlaybackService.h"
 #import "RHMusicPlaybackQueue.h"
-#import "RHMusicPlaybackQueueManager.h"
 #import "RHMusicNowPlayingInformation.h"
 #import "RHMusicRemoteCommander.h"
 #import "DOUAudioStreamer.h"
@@ -20,7 +19,6 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 
 @interface RHDOUMusicPlaybackService ()
 
-@property (nonatomic, strong) RHMusicPlaybackQueueManager *queueManager;
 @property (nonatomic, strong) RHMusicNowPlayingInformation *nowPlaying;
 @property (nonatomic, strong) RHMusicRemoteCommander *remoteControl;
 
@@ -31,18 +29,26 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
 
 @implementation RHDOUMusicPlaybackService
 
++ (instancetype)sharedInstance
+{
+    static id sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
+}
+
 - (void)dealloc
 {
     // also handled in stop
     self.nowPlaying = nil;
     self.remoteControl = nil;
-    
 }
 
-- (instancetype)initWithConfiguration:(RHMusicPlaybackConfiguration *)configuration
+- (instancetype)init
 {
     if (self = [super init]) {
-        _queueManager = [[RHMusicPlaybackQueueManager alloc] initWithConfiguration:configuration];
         [self commonInitForDOUMusicPlaybackService];
     }
     return self;

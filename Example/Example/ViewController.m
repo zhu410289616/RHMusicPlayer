@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
+#import "RHMusicPlaybackConfiguration.h"
+#import "RHDOUMusicPlaybackService.h"
+
 @interface ViewController ()
 
 @end
@@ -17,6 +20,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    RHMusicPlaybackConfiguration *configuration = [RHMusicPlaybackConfiguration defaultConfiguration];
+    [configuration testMusicItem];
+    
+    [[RHDOUMusicPlaybackService sharedInstance].queueManager enqueueMusicItems:configuration.queuedMusicItems];
+    [[RHDOUMusicPlaybackService sharedInstance] play];
+    
 }
 
 - (void)didReceiveMemoryWarning {

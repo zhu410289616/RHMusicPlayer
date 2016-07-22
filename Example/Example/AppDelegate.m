@@ -8,9 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "RHMusicPlaybackConfiguration.h"
-#import "RHAudioSessionService.h"
-
 @interface AppDelegate ()
 
 @end
@@ -20,10 +17,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    RHMusicPlaybackConfiguration *configuration = [RHMusicPlaybackConfiguration defaultConfiguration];
-    [configuration testMusicItem];
-    [[RHAudioSessionService sharedInstance] configure:configuration];
     
     return YES;
 }
