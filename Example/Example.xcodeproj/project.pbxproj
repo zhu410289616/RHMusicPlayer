@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8313BE011D41E200002D7A4F /* RHAudioSessionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8313BE001D41E200002D7A4F /* RHAudioSessionMonitor.m */; };
+		83B4644D1D43575E00464DCF /* NSFileManager+Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B4644C1D43575E00464DCF /* NSFileManager+Music.m */; };
+		83B464531D43585200464DCF /* NSString+Music.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B464521D43585200464DCF /* NSString+Music.m */; };
 		83C6FC021D4072A500530C86 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC011D4072A500530C86 /* main.m */; };
 		83C6FC051D4072A500530C86 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC041D4072A500530C86 /* AppDelegate.m */; };
 		83C6FC081D4072A500530C86 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C6FC071D4072A500530C86 /* ViewController.m */; };
@@ -31,6 +33,10 @@
 		2A648D4DE2C3B5190FC85A91 /* libPods-Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8313BDFF1D41E200002D7A4F /* RHAudioSessionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RHAudioSessionMonitor.h; sourceTree = "<group>"; };
 		8313BE001D41E200002D7A4F /* RHAudioSessionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RHAudioSessionMonitor.m; sourceTree = "<group>"; };
+		83B4644B1D43575E00464DCF /* NSFileManager+Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSFileManager+Music.h"; sourceTree = "<group>"; };
+		83B4644C1D43575E00464DCF /* NSFileManager+Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSFileManager+Music.m"; sourceTree = "<group>"; };
+		83B464511D43585200464DCF /* NSString+Music.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Music.h"; sourceTree = "<group>"; };
+		83B464521D43585200464DCF /* NSString+Music.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Music.m"; sourceTree = "<group>"; };
 		83C6FBFD1D4072A500530C86 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83C6FC011D4072A500530C86 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		83C6FC031D4072A500530C86 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -156,6 +162,10 @@
 				83C6FC381D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m */,
 				8313BDFF1D41E200002D7A4F /* RHAudioSessionMonitor.h */,
 				8313BE001D41E200002D7A4F /* RHAudioSessionMonitor.m */,
+				83B4644B1D43575E00464DCF /* NSFileManager+Music.h */,
+				83B4644C1D43575E00464DCF /* NSFileManager+Music.m */,
+				83B464511D43585200464DCF /* NSString+Music.h */,
+				83B464521D43585200464DCF /* NSString+Music.m */,
 			);
 			name = RHMusicPlayer;
 			path = ../RHMusicPlayer;
@@ -308,7 +318,9 @@
 				83C6FC211D4079A700530C86 /* RHMusicPlaybackQueue.m in Sources */,
 				8313BE011D41E200002D7A4F /* RHAudioSessionMonitor.m in Sources */,
 				83C6FC021D4072A500530C86 /* main.m in Sources */,
+				83B4644D1D43575E00464DCF /* NSFileManager+Music.m in Sources */,
 				83C6FC391D40C8CE00530C86 /* RHMusicPlaybackConfiguration.m in Sources */,
+				83B464531D43585200464DCF /* NSString+Music.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

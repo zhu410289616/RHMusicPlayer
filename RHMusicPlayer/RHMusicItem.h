@@ -17,6 +17,9 @@
 @property (nonatomic, strong) NSString *picture;
 @property (nonatomic, strong) NSString *musicPath;
 
+/** 缓存目录 */
+@property (nonatomic, strong) NSURL *cacheFileURL;
+
 @end
 
 @interface RHMusicItem (nowPlayingInfo)

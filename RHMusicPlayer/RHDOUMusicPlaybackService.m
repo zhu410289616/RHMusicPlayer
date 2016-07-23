@@ -10,6 +10,8 @@
 #import "RHMusicPlaybackQueue.h"
 #import "RHMusicNowPlayingInformation.h"
 #import "RHMusicRemoteCommander.h"
+#import "NSString+Music.h"
+#import "NSFileManager+Music.h"
 
 static void *kStatusKVOKey = &kStatusKVOKey;
 static void *kDurationKVOKey = &kDurationKVOKey;
@@ -258,7 +260,26 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     NSLog(@"buffering: %@", buffering);
     
     if ([self.player bufferingRatio] >= 1.0) {
-        NSLog(@"sha256: %@", [self.player sha256]);
+        NSLog(@"sha256: %@, cachedPath: %@", [self.player sha256], [self.player cachedPath]);
+        
+        @synchronized (self) {
+            NSString *documentDir = [NSFileManager rh_documentDirectory];
+            NSString *cacheDir = [NSFileManager rh_pathWithFilePath:[NSString stringWithFormat:@"%@/music", documentDir]];
+            
+            NSString *cacheName = [NSString rh_stringWithMD5Encode:self.currentMusicItem.musicPath];
+            NSString *cacheFile = [NSString stringWithFormat:@"%@/%@", cacheDir, cacheName];
+            
+            NSError *error;
+            if ([[NSFileManager defaultManager] fileExistsAtPath:cacheFile isDirectory:NULL]) {
+                return;
+            }
+            
+            [[NSFileManager defaultManager] moveItemAtPath:[self.player cachedPath] toPath:cacheFile error:&error];
+            if (error) {
+                NSLog(@"error: %@", error);
+            }
+        }
+        
     }
 }
 
