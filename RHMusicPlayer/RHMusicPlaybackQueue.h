@@ -22,6 +22,7 @@ extern NSInteger const RHMusicPlaybackQueueIndexStopped;
 @property (nonatomic, readonly) NSInteger indexOfCurrentMusicItem;
 @property (nonatomic, readonly) NSInteger numberOfMusicItems;
 
+- (void)enqueueMusicItems:(NSArray *)pendingMusicItems removeOldMusicItems:(BOOL)shouldRemove;
 - (void)enqueueMusicItems:(NSArray *)pendingMusicItems;
 
 - (RHMusicItem *)musicItemAtIndex:(NSInteger)index;

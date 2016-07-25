@@ -18,6 +18,7 @@ extern NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey;
 
 @property (nonatomic, strong, readonly) RHMusicPlaybackQueue *currentQueue;
 
+- (void)enqueueMusicItems:(NSArray *)musicItems removeOldMusicItems:(BOOL)shouldRemove;
 - (void)enqueueMusicItems:(NSArray *)musicItems;
 
 - (void)broadcastNowPlayingItemChange;

@@ -29,13 +29,15 @@ NSInteger const RHMusicPlaybackQueueIndexStopped = -1;
     return _queuedMusicItems.count;
 }
 
-- (void)enqueueMusicItems:(NSArray *)pendingMusicItems
+- (void)enqueueMusicItems:(NSArray *)pendingMusicItems removeOldMusicItems:(BOOL)shouldRemove
 {
-    if (0 == pendingMusicItems.count) {
-        return;
+    NSMutableArray *updatedMusicItems = [NSMutableArray array];
+    if (shouldRemove) {
+        //do not add old music items
+    } else {
+        [updatedMusicItems addObjectsFromArray:_queuedMusicItems];
     }
     
-    NSMutableArray *updatedMusicItems = [NSMutableArray arrayWithArray:_queuedMusicItems];
     [updatedMusicItems addObjectsFromArray:pendingMusicItems];
     
     if (_shufflePlayback) {
@@ -43,6 +45,15 @@ NSInteger const RHMusicPlaybackQueueIndexStopped = -1;
     }
     
     _queuedMusicItems = updatedMusicItems;
+}
+
+- (void)enqueueMusicItems:(NSArray *)pendingMusicItems
+{
+    if (0 == pendingMusicItems.count) {
+        return;
+    }
+    
+    [self enqueueMusicItems:pendingMusicItems removeOldMusicItems:NO];
 }
 
 - (RHMusicItem *)musicItemAtIndex:(NSInteger)index

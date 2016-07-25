@@ -21,13 +21,18 @@ NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybac
     return self;
 }
 
-- (void)enqueueMusicItems:(NSArray *)musicItems
+- (void)enqueueMusicItems:(NSArray *)musicItems removeOldMusicItems:(BOOL)shouldRemove
 {
     if (0 == musicItems.count) {
         return;
     }
     
-    [_currentQueue enqueueMusicItems:musicItems];
+    [_currentQueue enqueueMusicItems:musicItems removeOldMusicItems:shouldRemove];
+}
+
+- (void)enqueueMusicItems:(NSArray *)musicItems
+{
+    [_currentQueue enqueueMusicItems:musicItems removeOldMusicItems:NO];
 }
 
 - (void)broadcastNowPlayingItemChange
