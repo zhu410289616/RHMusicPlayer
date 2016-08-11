@@ -24,6 +24,7 @@
         _coverImageView.layer.cornerRadius = radius;
         _coverImageView.layer.borderWidth = 5.f;
         _coverImageView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        _coverImageView.image = [UIImage imageNamed:@"cover"];
         [self addSubview:_coverImageView];
         
         _playButtonBgView = [[UIView alloc] init];
@@ -31,8 +32,9 @@
         [self addSubview:_playButtonBgView];
         
         _playButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//        _playButton.frame = CGRectMake(<#CGFloat x#>, <#CGFloat y#>, <#CGFloat width#>, <#CGFloat height#>)
-        [_playButtonBgView addSubview:_playButtonBgView];
+        _playButton.frame = CGRectMake((width - 60)/2, (height - 60)/2, 60, 60);
+        [_playButton setBackgroundImage:[UIImage imageNamed:@"ic_action_play"] forState:UIControlStateNormal];
+        [_playButtonBgView addSubview:_playButton];
         
         //
         
@@ -40,12 +42,10 @@
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (void)refreshCoverTransform
+{
+    //图片旋转
+    _coverImageView.transform = CGAffineTransformRotate(_coverImageView.transform, M_PI / 1440);
 }
-*/
 
 @end

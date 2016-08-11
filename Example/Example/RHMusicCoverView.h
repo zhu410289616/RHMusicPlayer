@@ -15,4 +15,6 @@
 @property (nonatomic, strong, readonly) UIView *playButtonBgView;
 @property (nonatomic, strong, readonly) UIButton *playButton;
 
+- (void)refreshCoverTransform;
+
 @end
