@@ -7,6 +7,7 @@
 //
 
 #import "RHMusicPlaybackQueueManager.h"
+#import "RHMusicItem.h"
 
 NSString * const RHMusicPlaybackQueueNowPlayingItemChanged = @"RHMusicPlaybackQueueNowPlayingItemChanged";
 NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybackQueueNowPlayingItemChangedKey";
@@ -56,6 +57,25 @@ NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey = @"RHMusicPlaybac
 - (NSArray *)currentlyQueuedItems
 {
     return _currentQueue.queuedMusicItems;
+}
+
+- (NSInteger)indexOfQueue:(RHMusicItem *)musicItem
+{
+    NSInteger index = -1;
+    if (musicItem.musicPath.length == 0) {
+        return index;
+    }
+    
+    NSInteger musicCount = _currentQueue.queuedMusicItems.count;
+    for (NSInteger i=0; i<musicCount; i++) {
+        RHMusicItem *tempItem = _currentQueue.queuedMusicItems[i];
+        if ([tempItem.musicPath isEqualToString:musicItem.musicPath]) {
+            index = i;
+            break;
+        }
+    }
+    
+    return index;
 }
 
 @end

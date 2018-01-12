@@ -26,4 +26,6 @@ extern NSString * const RHMusicPlaybackQueueNowPlayingItemChangedKey;
 - (BOOL)queueHasItems;
 - (NSArray *)currentlyQueuedItems;
 
+- (NSInteger)indexOfQueue:(RHMusicItem *)musicItem;
+
 @end

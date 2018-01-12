@@ -25,6 +25,7 @@ extern NSInteger const RHMusicPlaybackQueueIndexStopped;
 - (void)enqueueMusicItems:(NSArray *)pendingMusicItems removeOldMusicItems:(BOOL)shouldRemove;
 - (void)enqueueMusicItems:(NSArray *)pendingMusicItems;
 
+/** 返回对应索引的歌曲，不存在则返回nil */
 - (RHMusicItem *)musicItemAtIndex:(NSInteger)index;
 
 - (RHMusicItem *)nextMusicItem;
@@ -32,6 +33,8 @@ extern NSInteger const RHMusicPlaybackQueueIndexStopped;
 
 - (NSInteger)nextItemIndex;
 - (NSInteger)previousItemIndex;
+/** 返回对应索引的歌曲，同时更新indexOfCurrentMusicItem，不存在则返回nil */
+- (RHMusicItem *)assetForIndex:(NSInteger)index;
 
 @end
 

@@ -64,6 +64,23 @@ static void *kBufferingRatioKVOKey = &kBufferingRatioKVOKey;
     return _currentMusicItem;
 }
 
+- (void)playMusic:(RHMusicItem *)musicItem
+{
+    NSInteger index = [self.queueManager indexOfQueue:musicItem];
+    if (index < 0) {
+        return;
+    }
+    
+    RHMusicItem *selectItem = [self.queueManager.currentQueue assetForIndex:index];
+    if (musicItem.musicPath.length == 0) {
+        return;
+    }
+    
+    [self.player pause];
+    self.currentMusicItem = selectItem;
+    [self prepareToPlay];
+}
+
 #pragma mark - Public behavior
 
 - (void)play

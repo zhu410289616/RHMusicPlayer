@@ -16,5 +16,7 @@
 
 - (DOUAudioStreamer *)player;
 - (RHMusicItem *)currentMusicItem;
+/** 播放对应歌曲 */
+- (void)playMusic:(RHMusicItem *)musicItem;
 
 @end
